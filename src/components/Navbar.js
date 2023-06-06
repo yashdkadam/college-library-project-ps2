@@ -1,6 +1,7 @@
 import React from 'react'
 
 function remove() {
+    //removed sessionStorage item token
     sessionStorage.removeItem('token');
 }
 
@@ -29,7 +30,7 @@ function Navbar() {
                                 <a className="nav-link" href="/">
                                     Sign in
                                 </a>
-                                <button onClick={remove}>signout</button>
+                                <button onClick={remove}>Signout</button>
                             </li>
                         </ul>
                     </div>
