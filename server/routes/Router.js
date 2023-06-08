@@ -3,20 +3,21 @@ const router = express.Router();
 const bcrypt = require('bcryptjs');
 var jwt = require('jsonwebtoken');
 const User = require('../models/User.js');
-const Student = require('../models/Student.js');
+const Book = require('../models/Books.js');
 const JWT_SECRET = 'DPisagoodb$oy';
-router.post('/addStudent', async (req, res) => {
+
+router.post('/addBook', async (req, res) => {
     try {
-        let student = new Student(req.body);
-        let another = await Student.find({ email: student.email });
+        let book = new Book(req.body);
+        let another = await Book.find({ title: book.title });
         if (another.length > 0) {
             return res.status(302).json({
-                msg: "Student already exists"
+                msg: "Book already exists"
             });
         }
-        await student.save();
+        await book.save();
         return res.status(200).json({
-            msg: "Student added successfully"
+            msg: "Book added successfully"
         });
     } catch (error) {
         return res.status(500).json({

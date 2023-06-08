@@ -3,7 +3,7 @@ import './App.css';
 import Login from './components/Login';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Register from './components/Register';
-import AddStudent from './components/addStudent';
+import AddBook from './components/addStudent';
 import useToken from './useToken';
 import Navbar from './components/Navbar';
 
@@ -20,7 +20,7 @@ function App() {
         <Routes>
           <Route path="/login" element={<Login setToken={setToken} />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/addStudent" element={<AddStudent />} />
+          <Route path="/addBook" element={<AddBook />} />
         </Routes>
     </>
   );
